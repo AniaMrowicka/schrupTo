@@ -24,5 +24,5 @@ public class Recipe {
     private int timeOfExecution; // in minutes
 
     @OneToMany
-    private List<Ingredients> listOfIngresients;
+    private List<Ingredients> ingredients;
 }
