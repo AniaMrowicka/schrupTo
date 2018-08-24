@@ -1,0 +1,26 @@
+.recipe-outside-frame{
+    max-height: 200px;
+    height: 200px;
+    padding: 5px;
+}
+.recipe-frame {
+    max-height: 200px;
+    height: 200px;
+    border: solid 1px #000000;
+}
+
+.recipe-image-frame {
+    position: relative;
+    margin-top: 3px;
+    margin-bottom: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+
+    height: 70%;
+    border: solid 1px #ff0000;
+}
+
+.row-marginless{
+    margin-right:0px;
+    margin-left:0px;
+}

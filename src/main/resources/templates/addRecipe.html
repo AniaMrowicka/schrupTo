@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj przepis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container marketing">
+    <div class="row">
+        <form th:action="@{/addRecipe}" th:object="${recipe}" method="post">
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="nameOfDish">Nazwa dania:</label>
+                </div>
+                <div class="col-md-9">
+                    <input class="form-control" id="nameOfDish" th:field="*{nameOfDish}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="execution">Wykonanie:</label>
+                </div>
+                <div class="col-md-9">
+                    <input class="form-control" id="execution" th:field="*{execution}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="ingredients">Składniki:</label>
+                </div>
+                <div class="col-md-5">
+                    <select class="form-control" id="ingredients" th:field="*{ingredients}">
+                        <option th:each="ingredient : ${ingredients}"
+                                th:text="${ingredient.getName}"
+                                th:value="${ingredients.getId}"></option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label class="cell-justified" for="timeOfExecution">Czas wykonania:</label>
+                </div>
+                <div class="col-md-1">
+                    <input type="number" id="timeOfExecution" th:field="*{timeOfExecution}" min="1" max="60">
+                    <div> min. </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-offset-3 col-md-9">
+                    <input class="form-control" type="submit" th:value="Submit">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
