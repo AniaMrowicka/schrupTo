@@ -22,6 +22,9 @@ public class Recipe {
     private String execution;
 
     private int timeOfExecution; // in minutes
+    @Lob
+    @Column
+    private byte[] image;
 
     @OneToMany
     private List<Ingredients> ingredients;
